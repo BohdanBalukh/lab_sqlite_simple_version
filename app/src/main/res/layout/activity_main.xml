@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"> <!--IMPORTANT otherwise backgrnd img. will not fill the whole screen -->
+    <RelativeLayout
+        android:id="@+id/Activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/textGroupMonitor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/noData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Немає даних!"
+            android:visibility="gone"
+            android:layout_below="@id/recyclerView"/>
+        <Button
+            android:id="@+id/addData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addData"
+            android:text="Додати до бази даних"
+            android:layout_below="@id/noData"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="deleteAllUsers"
+            android:text="Очистити базу даних"
+            android:layout_below="@id/addData"/>
+
+    </RelativeLayout>
+</ScrollView>
